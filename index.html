@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>DEMO2</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    </head>
+    <body>
+        <!-- Canvas placeholder -->
+        <div id="screen"></div>
+
+        <!-- Plugin(s) -->
+        <script type = "text/javascript" src="js/lib/melonJS-2.1.4.js"></script>
+        <!-- <script type = "text/javascript" src="js/lib/melonJS.js"></script> -->
+        <!-- Plugin(s) -->
+        <script type="text/javascript" src="js/lib/plugins/debug/debugPanel.js"></script>
+        <!-- Game -->
+        <script type="text/javascript" src="js/game.js"></script>
+        <script type="text/javascript" src="js/resources.js"></script>
+
+        <script type="text/javascript" src="js/gui/button.js"></script>
+
+        <script type="text/javascript" src="js/entities/effect.js"></script>
+
+        <script type="text/javascript" src="js/entities/HUD.js"></script>
+        <script type="text/javascript" src="js/entities/drillEntity.js"></script>
+        <script type="text/javascript" src="js/entities/player.js"></script>
+        <script type="text/javascript" src="js/entities/counter.js"></script>
+        <script type="text/javascript" src="js/entities/ground.js"></script>
+        <script type="text/javascript" src="js/entities/rock.js"></script>
+        <script type="text/javascript" src="js/entities/platform.js"></script>
+        <script type="text/javascript" src="js/entities/mapData.js"></script>
+
+        <script type="text/javascript" src="js/screens/playscreen.js"></script>
+        <script type="text/javascript" src="js/screens/gameoverscreen.js"></script>
+        <script type="text/javascript" src="js/screens/loadingscreen.js"></script>
+        <script type="text/javascript" src="js/screens/menuscreen.js"></script>
+        <!-- /build -->
+        <!-- Bootstrap & Mobile optimization tricks -->
+        <script type="text/javascript">
+            window.onReady(function onReady() {
+                game.onload();
+
+                // Mobile browser hacks
+                if (me.device.isMobile && !navigator.isCocoonJS) {
+                    // Prevent the webview from moving on a swipe
+                    window.document.addEventListener("touchmove", function (e) {
+                        e.preventDefault();
+                        window.scroll(0, 0);
+                        return false;
+                    }, false);
+                }
+            });
+        </script>
+    </body>
+</html>
